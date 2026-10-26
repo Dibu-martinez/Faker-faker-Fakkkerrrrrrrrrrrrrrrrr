@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WORLDs Championship | LoL Esports</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080b12;
+    color: #f5f5f5;
+}
+
+/* HEADER */
+
+header {
+    background: #101722;
+    border-bottom: 1px solid #263244;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #d4a94f;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #d4a94f;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 380px;
+    padding: 90px 7%;
+    background:
+        linear-gradient(90deg, #080b12 20%, #080b12cc 60%, #080b1260),
+        url("https://images.unsplash.com/photo-1542751371-adc38448a05e")
+        center/cover;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 72px);
+    color: #d4a94f;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #bbb;
+    font-size: 17px;
+    max-width: 500px;
+    line-height: 1.7;
+}
+
+.hero button {
+    margin-top: 25px;
+    background: #d4a94f;
+    color: #080b12;
+    border: none;
+    padding: 14px 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* MAIN */
+
+.container {
+    width: 86%;
+    max-width: 1300px;
+    margin: 50px auto;
+}
+
+.section-title {
+    font-size: 27px;
+    margin-bottom: 25px;
+    border-left: 4px solid #d4a94f;
+    padding-left: 15px;
+}
+
+/* MATCH */
+
+.match {
+    background: #121a26;
+    border: 1px solid #263244;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 45px;
+}
+
+.match-info {
+    color: #d4a94f;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.match-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+}
+
+.team {
+    text-align: center;
+    flex: 1;
+}
+
+.team h3 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.team-logo {
+    width: 75px;
+    height: 75px;
+    margin: auto;
+    background: #202b3b;
+    border: 1px solid #d4a94f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.score {
+    font-size: 35px;
+    font-weight: bold;
+    color: #d4a94f;
+}
+
+.vs {
+    color: #777;
+    font-size: 13px;
+}
+
+/* STANDINGS */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #121a26;
+    margin-bottom: 45px;
+}
+
+th, td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #263244;
+}
+
+th {
+    background: #1a2433;
+    color: #d4a94f;
+    font-size: 13px;
+}
+
+td {
+    font-size: 14px;
+}
+
+tr:hover {
+    background: #202b3b;
+}
+
+.rank {
+    color: #d4a94f;
+    font-weight: bold;
+}
+
+/* MATCH LIST */
+
+.schedule {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.schedule-card {
+    background: #121a26;
+    border: 1px solid #263244;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.schedule-card h3 {
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.schedule-card p {
+    color: #aaa;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.schedule-card strong {
+    color: #d4a94f;
+}
+
+/* BRACKET */
+
+.bracket {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.round {
+    background: #121a26;
+    border: 1px solid #263244;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.round h3 {
+    color: #d4a94f;
+    margin-bottom: 20px;
+}
+
+.bracket-match {
+    background: #202b3b;
+    padding: 15px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    line-height: 2;
+}
+
+/* FOOTER */
+
+footer {
+    background: #101722;
+    padding: 30px;
+    text-align: center;
+    color: #777;
+    margin-top: 70px;
+    font-size: 13px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 65px 7%;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .match-content {
+        gap: 10px;
+    }
+
+    .team-logo {
+        width: 55px;
+        height: 55px;
+        font-size: 18px;
+    }
+
+    .team h3 {
+        font-size: 13px;
+    }
+
+    .score {
+        font-size: 25px;
+    }
+
+    .schedule,
+    .bracket {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 12px 8px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">WORLDS 2026</div>
+
+    <nav>
+        <a href="#home">Trang chủ</a>
+        <a href="#standings">Bảng xếp hạng</a>
+        <a href="#schedule">Lịch đấu</a>
+        <a href="#bracket">Knockout</a>
+    </nav>
+
+</header>
+
+<section class="hero" id="home">
+
+    <h1>WORLDs<br>CHAMPIONSHIP</h1>
+
+    <p>
+        The best teams. The biggest stage.
+        The ultimate League of Legends competition.
+    </p>
+
+    <button onclick="scrollToSection('schedule')">
+        XEM LỊCH THI ĐẤU
+    </button>
+
+</section>
+
+<main class="container">
+
+    <!-- TRẬN ĐẤU -->
+
+    <section>
+
+        <h2 class="section-title">TRẬN ĐẤU NỔI BẬT</h2>
+
+        <div class="match">
+
+            <div class="match-info">
+                DEMO MATCH · CHUNG KẾT
+            </div>
+
+            <div class="match-content">
+
+                <div class="team">
+                    <div class="team-logo">T1</div>
+                    <h3>T1</h3>
+                </div>
+
+                <div>
+                    <div class="score">3 - 2</div>
+                    <div class="vs">BEST OF 5</div>
+                </div>
+
+                <div class="team">
+                    <div class="team-logo">GEN</div>
+                    <h3>Gen.G</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- BẢNG XẾP HẠNG -->
+
+    <section id="standings">
+
+        <h2 class="section-title">BẢNG XẾP HẠNG</h2>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>ĐỘI</th>
+                    <th>THẮNG</th>
+                    <th>THUA</th>
+                    <th>ĐIỂM</th>
+                </tr>
+            </thead>
+
+            <tbody id="standings-body"></tbody>
+
+        </table>
+
+    </section>
+
+    <!-- LỊCH THI ĐẤU -->
+
+    <section id="schedule">
+
+        <h2 class="section-title">LỊCH THI ĐẤU</h2>
+
+        <div class="schedule" id="schedule-list"></div>
+
+    </section>
+
+    <!-- KNOCKOUT -->
+
+    <section id="bracket" style="margin-top:50px">
+
+        <h2 class="section-title">KNOCKOUT STAGE</h2>
+
+        <div class="bracket">
+
+            <div class="round">
+
+                <h3>QUARTERFINAL</h3>
+
+                <div class="bracket-match">
+                    T1 3 - 1 BLG
+                </div>
+
+                <div class="bracket-match">
+                    GEN 3 - 2 TES
+                </div>
+
+            </div>
+
+            <div class="round">
+
+                <h3>SEMIFINAL</h3>
+
+                <div class="bracket-match">
+                    T1 3 - 2 GEN
+                </div>
+
+                <div class="bracket-match">
+                    BLG 2 - 3 G2
+                </div>
+
+            </div>
+
+            <div class="round">
+
+                <h3>GRAND FINAL</h3>
+
+                <div class="bracket-match">
+                    T1 3 - 2 G2
+                </div>
+
+                <div class="bracket-match">
+                    🏆 CHAMPION: T1
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+
+    <p>WORLDs Championship Fan Website</p>
+
+    <p style="margin-top:10px">
+        League of Legends is a trademark of Riot Games.
+        This is an unofficial fan project.
+    </p>
+
+</footer>
+
+<script>
+
+// DỮ LIỆU DEMO
+
+const teams = [
+    { name: "T1", wins: 3, losses: 0 },
+    { name: "Gen.G", wins: 2, losses: 1 },
+    { name: "BLG", wins: 2, losses: 1 },
+    { name: "G2 Esports", wins: 1, losses: 2 },
+    { name: "TES", wins: 1, losses: 2 },
+    { name: "KT Rolster", wins: 0, losses: 3 }
+];
+
+const matches = [
+    {
+        date: "DEMO DAY 1",
+        team1: "T1",
+        team2: "Gen.G",
+        result: "2 - 1"
+    },
+    {
+        date: "DEMO DAY 1",
+        team1: "BLG",
+        team2: "G2 Esports",
+        result: "2 - 0"
+    },
+    {
+        date: "DEMO DAY 2",
+        team1: "TES",
+        team2: "KT Rolster",
+        result: "2 - 1"
+    },
+    {
+        date: "DEMO DAY 2",
+        team1: "Gen.G",
+        team2: "BLG",
+        result: "1 - 2"
+    }
+];
+
+// RENDER BẢNG XẾP HẠNG
+
+function renderStandings() {
+
+    const tbody = document.getElementById("standings-body");
+
+    const sortedTeams = [...teams].sort((a, b) => {
+
+        if (b.wins !== a.wins) {
+            return b.wins - a.wins;
+        }
+
+        return a.losses - b.losses;
+
+    });
+
+    tbody.innerHTML = sortedTeams.map((team, index) => {
+
+        return `
+            <tr>
+                <td class="rank">${index + 1}</td>
+                <td><strong>${team.name}</strong></td>
+                <td>${team.wins}</td>
+                <td>${team.losses}</td>
+                <td class="rank">${team.wins * 3}</td>
+            </tr>
+        `;
+
+    }).join("");
+
+}
+
+// RENDER LỊCH ĐẤU
+
+function renderSchedule() {
+
+    const container = document.getElementById("schedule-list");
+
+    container.innerHTML = matches.map(match => {
+
+        return `
+            <div class="schedule-card">
+
+                <p>${match.date}</p>
+
+                <h3>
+                    ${match.team1}
+                    <strong>${match.result}</strong>
+                    ${match.team2}
+                </h3>
+
+                <p>BO3 · KẾT QUẢ DEMO</p>
+
+            </div>
+        `;
+
+    }).join("");
+
+}
+
+// SCROLL
+
+function scrollToSection(id) {
+
+    document.getElementById(id).scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+// KHỞI TẠO
+
+renderStandings();
+renderSchedule();
+
+</script>
+
+</body>
+</html>
